@@ -83,10 +83,10 @@ fa-cart-shopping {
         border: 1px solid var(--primary-color);
         color: var(--primary-color);
     }
-        .cart--icon {   
+        .cart-icon {   
         position: relative;
         }
-        .cart--icon span{
+        .cart-icon span{
             background: var(--secondary-color);
             color: var(--accent-color);
             border-radius: 50%;    
@@ -120,5 +120,8 @@ fa-cart-shopping {
         justify-content: center;
         border-radius: 10px;
         }
+
+
+        
            
            
