@@ -1,37 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,
-        initial-scale=1.0">
-        <title>Login Form in HTML and CSS | Codehal</title>
-        <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Bite Fast Food By Code Info</title>
+    <link rel="stylesheet" href="eg.css" />
+        <!-- font awesome icons cdn link -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
     </head>
-
     <body>
-     
-        <div class="input-box"> 
-            <form action="index.php" method="post">
-                <h1>Login</h1>
-                <input type="text" placeholder="Username" name="username" required>
+        <header class="header"> <nav class="header--menu">
+            <div class="burger--icon">
+            <button><i class="fa-solid fa-bars"></i></button>
+            
+            <div class="burger-menu">
+                <a href="hello.html">Sign up/Login</a>
+                <a href="#">Your Orders</a>
+                <a href="#">Add Coupon</a>
+            </div>
+            </div>
+
+        <div class="search--box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="search"/>
         </div>
-
-        <div class="input-box">
-            <input type="password" placeholder="Password" name="password" required>
+        <div class="menu--icons">
+            <i class ="fa-solid fa-bowl-food"></i>
         </div>
-
-        <div class="remember-forgot">
-            <label><input type="checkbox"> Remember me</label>
-            <a href="#">Forgot password?</a>
+            <div class="cart--icons">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <input type="button"/>
+            <span>0</span>
+            </div>
         </div>
-        <button type="submit" class="btn" name="login">login</button>
-
-
-</form>
-</form>
-</div>
-
-</body>
- </html>
+            
+            </nav>
+        </nav>
+        </header>
+        <!-- cover section -->
+<section class="cover">
+    <div class="cover-overlay">
+        <h1>flash</h1>
+        <span class="slogan">lighting speed
+        </span>
+    </div>
+</section>
+<main>
+    <h2 class="section-heading">food menu</h2>
+    <div class="menu--list">
+        <div class="menu--item">
+            <img src="image.jpg"alt="  " />
+        <h4>Burger</h4>
+        </div>
+        <div class="menu--item">
+            <img src="pizza.jpg"alt=" "   />
+        <h4>Pizza</h4>
+        </div> 
+        <div class="menu--item">
+            <img src="biriyani.jpg"alt="" />
+        <h4>biriyani</h4>
+        </div> 
+        <div class="menu--item">
+            <img src="kfc.jpg"alt="" />
+        <h4>Fried Chicken</h4>
+        </div>
+    </div>
+    <h2 class="section-heading">Menu Items</h2>
+        <div class="card--list">
+        <div class="card">
+        <img src="image.jpg" alt="" />
+        <h4 class="card--title">Burger</h4>
+        <div class="card--price">
+        <div class="price">$120</div>
+        <i class="fa-solid fa-plus add-to-cart"></i>
+        </div>
+        </div>
+        <div class="card">
+            <img src="pizza.jpg" alt="" />
+            <h4 class="card--title">Pizza</h4>
+            <div class="card--price">
+            <div class="price">$140</div>
+            <i class="fa-solid fa-plus add-to-cart"></i>
+            </div>
+            </div>
+            <div class="card">
+                <img src="biriyani.jpg" alt="" />
+                <h4 class="card--title">biriyani</h4>
+                <div class="card--price">
+                <div class="price">$100</div>
+                <i class="fa-solid fa-plus add-to-cart"></i>
+                </div>
+                </div>
+                <div class="card">
+                    <img src="kfc.jpg" alt="" />
+                    <h4 class="card--title">Fried Chicken</h4>
+                    <div class="card--price">
+                    <div class="price">$500</div>
+                    <i class="fa-solid fa-plus add-to-cart"></i>
+                    </div>
+                    </div>
+            </div>
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-close">
+                <i class="fa-solid fa-close"></i>
+                <div class="cart-menu">
+                <h3>My Cart</h3>
+                <div class="cart-tems"> </div>
+                </div>
+                <div class="sidebar--footer">
+                <div class="total--amount">
+                <h5>Total</h5>
+                <div class="cart-total">$0.00</div>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+                </div>
+                </div>
+            </div>
+        </main>
+<script src="cart.js"></script>
+    </body>
+    </html>

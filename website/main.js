@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartItems = [];
     let totalAmount = 0;
 
-    addToCartButtons.forEach((button) => 
+    addToCartButtons.forEach((button) =>
         button.addEventListener('click', () => {
             const card = button.closest('.card');
             const itemName = card.querySelector('.card--title').textContent;

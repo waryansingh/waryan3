@@ -1,14 +1,139 @@
-*{
-    margin: auto;  
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, sans-serif;
 }
-    body 
-        {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: skyblue;
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.header {
+    background-color: #ffffff; 
+    color: #333;
+    padding: 10px 20px;
+    position: relative; 
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.burger--icon {
+    position: relative;
+}
+
+.burger--icon button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.burger-menu {
+    display: none; 
+    position: absolute;
+    top: 40px; 
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    width: 200px; 
+    z-index: 1000; 
+}
+
+.burger-menu.open {
+    display: block; 
+}
+
+.burger-menu a {
+    display: block;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.burger-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.search--box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1; 
+}
+
+.search--box i {
+    color: #333;
+    font-size: 20px;
+}
+
+.search--box input {
+    padding: 10px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1; 
+    min-width: 300px; 
+}
+
+.cart--icons i {
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li {
+    margin: 0;
+}
+
+.nav-list a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 15px;
+    }
+}
