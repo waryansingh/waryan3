@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartIcon = document.querySelector('.cart--icons');
     const sidebar = document.getElementById('sidebar');
     const closeButton = document.querySelector('.sidebar-close');
+    const checkoutButton = document.querySelector('.checkout-btn');
 
     if (!cartItemsList) {
         console.error('Element with class "cart-tems" not found.');
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartItems = [];
     let totalAmount = 0;
 
-    addToCartButtons.forEach((button) =>
+    addToCartButtons.forEach((button) => 
         button.addEventListener('click', () => {
             const card = button.closest('.card');
             const itemName = card.querySelector('.card--title').textContent;
@@ -64,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Attach event listener to the remove buttons
-        cartItemsList.addEventListener('click', (event) => {
-            if (event.target.closest('.remove-btn')) {
-                const index = parseInt(event.target.closest('.remove-btn').dataset.index, 10);
+        cartItemsList.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = parseInt(event.currentTarget.dataset.index, 10);
                 removeItemFromCart(index);
-            }
+            });
         });
     }
 
@@ -103,6 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sidebar) {
                 sidebar.classList.remove('open');
             }
+        });
+    }
+
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', () => {
+            alert('Proceed to checkout');
+            // You can add more functionality for the checkout process here
         });
     }
 });
