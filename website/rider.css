@@ -1,0 +1,50 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .profile, .history, .earnings, .additional-info {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .profile h2 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .history table, .earnings table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .history table th, .history table td, .earnings table th, .earnings table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .history table th, .earnings table th {
+            background-color: #f8f8f8;
+        }
+    

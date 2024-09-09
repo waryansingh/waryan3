@@ -5,8 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Bite Fast Food By Code Info</title>
     <link rel="stylesheet" href="main2.css" />
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        /* Basic styling for the modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cart-item-image {
+            width: 50px; /* Adjust size as needed */
+            height: 50px;
+            border-radius: 5px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item-quantity {
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -35,7 +105,6 @@
         </nav>
     </header>
 
-   
     <section class="cover">
         <div class="cover-overlay">
             <h1>flash</h1>
@@ -44,29 +113,10 @@
     </section>
 
     <main>
-        <!-- <h2 class="section-heading">food menu</h2>
-        <div class="menu--list">
-            <div class="menu--item">
-                <img src="image.jpg" alt="Burger" />
-                <h4>Burger</h4>
-            </div>
-            <div class="menu--item">
-                <img src="pizza.jpg" alt="Pizza" />
-                <h4>Pizza</h4>
-            </div>
-            <div class="menu--item">
-                <img src="biriyani.jpg" alt="Biriyani" />
-                <h4>Biriyani</h4>
-            </div>
-            <div class="menu--item">
-                <img src="kfc.jpg" alt="Fried Chicken" />
-                <h4>Fried Chicken</h4>
-            </div> 
-        </div>-->
         <h2 class="section-heading">Menu Items</h2>
         <div class="card--list">
             <div class="card">
-                <img src="image.jpg" alt="Burger" />
+                <img src="image.jpg" alt="Burger" class="food-image" />
                 <h4 class="card--title">Burger</h4>
                 <div class="card--price">
                     <div class="price">$120</div>
@@ -74,7 +124,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="pizza.jpg" alt="Pizza" />
+                <img src="pizza.jpg" alt="Pizza" class="food-image" />
                 <h4 class="card--title">Pizza</h4>
                 <div class="card--price">
                     <div class="price">$140</div>
@@ -82,7 +132,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="biriyani.jpg" alt="Biriyani" />
+                <img src="biriyani.jpg" alt="Biriyani" class="food-image" />
                 <h4 class="card--title">Biriyani</h4>
                 <div class="card--price">
                     <div class="price">$100</div>
@@ -90,7 +140,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="kfc.jpg" alt="Fried Chicken" />
+                <img src="kfc.jpg" alt="Fried Chicken" class="food-image" />
                 <h4 class="card--title">Fried Chicken</h4>
                 <div class="card--price">
                     <div class="price">$500</div>
@@ -119,6 +169,55 @@
         </div>
     </main>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" class="modal-image" src="" alt="Food Image">
+            <h2 id="food-title">Food Title</h2>
+            <p id="food-description">Here is some more information about the food item!</p>
+            <p id="food-price">Price: $0.00</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Add event listeners to all images with class "food-image"
+        var images = document.getElementsByClassName("food-image");
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                var foodTitle = this.alt; // Get the food title from the image alt attribute
+                var foodPrice = this.nextElementSibling.nextElementSibling.firstElementChild.textContent; // Get the price from the DOM
+                var foodImage = this.src; // Get the image source URL
+                
+                // Set the modal content
+                document.getElementById("modal-image").src = foodImage;
+                document.getElementById("food-title").textContent = foodTitle;
+                document.getElementById("food-description").textContent = "Here is some more information about " + foodTitle + ".";
+                document.getElementById("food-price").textContent = "Price: " + foodPrice;
+                
+                // Display the modal
+                modal.style.display = "block";
+            }
+        }
+    </script>
     <script src="main.js"></script>
 </body>
 </html>

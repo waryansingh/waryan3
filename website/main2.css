@@ -176,7 +176,6 @@ body {
 }
 
 .menu--item img {
-    
     width: 100%;
 }
 
@@ -237,13 +236,14 @@ body {
     position: fixed;
     top: 0;
     right: -300px;
-    background-color: var(--accent-color);
+    background-color: var(--decent-color);
     box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease-in-out;
     z-index: 1000;
     padding: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    padding-top: 70px; /* Added padding to move cart items down */
 }
 
 .sidebar.open {
@@ -253,7 +253,7 @@ body {
 .sidebar-close {
     position: absolute;
     left: 20px;
-    top: 10px;
+    top: 20px; /* Adjusted top position to keep the button away from the content */
     cursor: pointer;
 }
 
@@ -261,7 +261,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 1rem;
+    margin-top: 2rem; /* Moved cart items list down */
 }
 
 .individual-cart-item {
@@ -289,7 +289,7 @@ body {
     justify-content: space-between;
     border: 2px solid var(--decent-color);
     border-radius: 5px;
-    padding: 15px;
+    padding: 30px;
 }
 
 .cart-total {
@@ -311,15 +311,4 @@ body {
 
 .Test {
     position: fixed;
-}
-.cart-total{
-    position: relative;
-    left: -80px
-    
-    
-}
-.cart-menu{
-    position: relative;
-    top: 6.5px;
-
 }

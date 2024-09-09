@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Bite Fast Food By Code Info</title>
     <link rel="stylesheet" href="cart.css" />
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 </head>
 <body>
     <header class="header">
@@ -35,7 +35,6 @@
         </nav>
     </header>
 
-   
     <section class="cover">
         <div class="cover-overlay">
             <h1>flash</h1>
@@ -44,29 +43,10 @@
     </section>
 
     <main>
-        <!-- <h2 class="section-heading">food menu</h2>
-        <div class="menu--list">
-            <div class="menu--item">
-                <img src="image.jpg" alt="Burger" />
-                <h4>Burger</h4>
-            </div>
-            <div class="menu--item">
-                <img src="pizza.jpg" alt="Pizza" />
-                <h4>Pizza</h4>
-            </div>
-            <div class="menu--item">
-                <img src="biriyani.jpg" alt="Biriyani" />
-                <h4>Biriyani</h4>
-            </div>
-            <div class="menu--item">
-                <img src="kfc.jpg" alt="Fried Chicken" />
-                <h4>Fried Chicken</h4>
-            </div> 
-        </div>-->
         <h2 class="section-heading">Menu Items</h2>
         <div class="card--list">
             <div class="card">
-                <img src="image.jpg" alt="Burger" />
+                <img src="image.jpg" alt="Burger" class="food-image" />
                 <h4 class="card--title">Burger</h4>
                 <div class="card--price">
                     <div class="price">$120</div>
@@ -74,7 +54,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="pizza.jpg" alt="Pizza" />
+                <img src="pizza.jpg" alt="Pizza" class="food-image" />
                 <h4 class="card--title">Pizza</h4>
                 <div class="card--price">
                     <div class="price">$140</div>
@@ -82,7 +62,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="biriyani.jpg" alt="Biriyani" />
+                <img src="biriyani.jpg" alt="Biriyani" class="food-image" />
                 <h4 class="card--title">Biriyani</h4>
                 <div class="card--price">
                     <div class="price">$100</div>
@@ -90,7 +70,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="kfc.jpg" alt="Fried Chicken" />
+                <img src="kfc.jpg" alt="Fried Chicken" class="food-image" />
                 <h4 class="card--title">Fried Chicken</h4>
                 <div class="card--price">
                     <div class="price">$500</div>
@@ -118,6 +98,16 @@
             </div>
         </div>
     </main>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="food-title">Food Title</h2>
+            <p id="food-description">Here is some more information about the food item!</p>
+            <p id="food-price">Price: $0.00</p>
+        </div>
+    </div>
 
     <script src="cart.js"></script>
 </body>

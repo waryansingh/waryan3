@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Portal</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="header--menu">
+            <div class="burger--icon">
+                <button><i class="fa-solid fa-bars"></i></button>
+                <div class="burger-menu">
+                    <a href="front(main).html">Sign up/Login</a>
+                    <a href="front(cart).html">Home page</a>
+                    <a href="#">Your Orders</a>
+                    <a href="vendor.html">Vendor Portal</a>
+                </div>
+            </div>
+
+            <div class="search--box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="search"/>
+            </div>
+            <div class="menu--icons">
+                <i class="fa-solid fa-bowl-food"></i>
+            </div>
+            <div class="cart--icons">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <input type="button"/>
+                <span>0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="vendor-form-section">
+            <h2>Restaurant Details</h2>
+            <form id="vendor-form">
+                <div class="input-group">
+                    <label for="restaurant-name">Restaurant Name</label>
+                    <input type="text" id="restaurant-name" name="restaurant-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="restaurant-description">Description</label>
+                    <textarea id="restaurant-description" name="restaurant-description" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="restaurant-photo">Restaurant Photo</label>
+                    <input type="file" id="restaurant-photo" name="restaurant-photo" accept="image/*" required>
+                </div>
+
+                <h3>Food Items</h3>
+                <div id="food-items">
+                    <div class="food-item">
+                        <label for="food-name-1">Food Name</label>
+                        <input type="text" id="food-name-1" name="food-name" required>
+
+                        <label for="food-price-1">Price</label>
+                        <input type="number" id="food-price-1" name="food-price" required>
+
+                        <label for="food-description-1">Description</label>
+                        <textarea id="food-description-1" name="food-description" required></textarea>
+
+                        <label for="food-photo-1">Food Photo</label>
+                        <input type="file" id="food-photo-1" name="food-photo" accept="image/*" required>
+                    </div>
+                </div>
+
+                <button type="button" id="add-food-item">Add Another Food Item</button>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="vendor.js"></script>
+</body>
+</html>

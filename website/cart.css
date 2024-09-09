@@ -39,32 +39,33 @@ body {
     color: var(--accent-color);
     border-radius: 5px;
     cursor: pointer;
+}
 
+.burger--icon a {
+    display: block;
+    color: black;
+    padding: 6px 3px;
 }
-.burger--icon a{
-    display:block;
-    color:black;
-    padding: 6px 3px ;
-}
-.burger--icon .burger-menu{
+
+.burger--icon .burger-menu {
     display: none;
     position: absolute;
-    background-color : var(--primary-color) ;
-    min-width:100px;
+    background-color: var(--primary-color);
+    min-width: 100px;
     box-shadow: 2px 2px 5px rgb(218, 160, 160);
-
 }
-.burger--icon:hover .burger-menu{
+
+.burger--icon:hover .burger-menu {
     display: block;
 }
-.burger--icon:hover button{
-    background-color:#0a3102
-}
-.burger--icon a:hover{
-    background-color: #1d8a07
+
+.burger--icon:hover button {
+    background-color: #0a3102;
 }
 
-
+.burger--icon a:hover {
+    background-color: #1d8a07;
+}
 
 .search--box {
     background-color: var(--primary-color);
@@ -103,16 +104,19 @@ body {
 .menu--icons:hover {
     background: var(--primary-color);
 }
-fa-cart-shopping {
+
+.fa-cart-shopping {
     background: transparent !important;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
 }
+
 .cart--icons {
     position: relative;
     cursor: pointer;
 }
-.cart--icons span{
+
+.cart--icons span {
     background: var(--secondary-color);
     color: var(--accent-color);
     border-radius: 50%;
@@ -127,6 +131,7 @@ fa-cart-shopping {
     right: -5px;
     top: -5px;
 }
+
 .cover {
     background-image: url('bg.jpg');
     background-size: cover;
@@ -135,9 +140,9 @@ fa-cart-shopping {
     border-radius: 10px;
     margin-top: 10px;
 }
-.cover-overlay{
 
-    background:rgba(0, 0, 0, 0.6);
+.cover-overlay {
+    background: rgba(0, 0, 0, 0.6);
     height: 100%;
     color: var(--accent-color);
     display: flex;
@@ -146,20 +151,21 @@ fa-cart-shopping {
     justify-content: center;
     border-radius: 10px;
 }
+
 .section-heading {
     font-size: 18px;
     text-transform: uppercase;
     margin: 1rem 0 10px 0;
     color: var(--text-color);
 }
-/* menu list */
+
 .menu--list {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
 }
-.menu--item
-{
+
+.menu--item {
     width: 114px;
     display: flex;
     align-items: center;
@@ -168,15 +174,18 @@ fa-cart-shopping {
     padding: 10px 13px;
     border-radius: 10px;
 }
-.menu--item img{
-    width:100%;
+
+.menu--item img {
+    width: 100%;
 }
+
 .card--list {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 2rem;
 }
+
 .card {
     width: 190px;
     display: flex;
@@ -186,99 +195,156 @@ fa-cart-shopping {
     padding: 10px 1rem;
     border-radius: 10px;
     background: var(--accent-color);
-    box-shadow: 0px 10px 15px 3px rgba (0, 0, 0, 0.1);
+    box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.1);
     text-align: center;
     color: var(--text-color);
 }
+
 .card img {
-    width: 100%;
+    height: 150px;
+    width: 150px;
 }
+
 .card--price {
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-between;
 }
+
 .card--price.price {
     color: var(--primary-color);
     font-weight: 600;
 }
-.add-to-cart{
+
+.add-to-cart {
     background: var(--primary-color);
     color: var(--accent-color);
     border-radius: 50%;
     padding: 5px;
     cursor: pointer;
 }
-.add-to-cart:hover{
+
+.add-to-cart:hover {
     color: var(--accent-color);
-    box-shadow: rgb(0 0 0 / 30%)0px 4px 4px, rgb(231, 236, 236)0px 0px 0px 3px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 4px 4px, rgb(231, 236, 236) 0px 0px 0px 3px;
 }
+
 .sidebar {
     width: 300px;
     height: 100%;
     position: fixed;
     top: 0;
-    /* right: 0; */
     right: -300px;
-    background-color: var(--accent-color);
+    background-color: var(--decent-color);
     box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease-in-out;
     z-index: 1000;
     padding: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    padding-top: 70px; /* Added padding to move cart items down */
 }
-.sidebar.open{
+
+.sidebar.open {
     right: 0;
 }
-.sidebar-close{
+
+.sidebar-close {
     position: absolute;
     left: 20px;
-    top: 10px;
+    top: 20px; /* Adjusted top position to keep the button away from the content */
     cursor: pointer;
 }
-.cart-tems{
+
+.cart-tems {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 1rem;
+    margin-top: 2rem; /* Moved cart items list down */
 }
-.individual-cart-item{
+
+.individual-cart-item {
     display: flex;
     justify-content: space-between;
-    padding: 10px 5px ;
+    padding: 10px 5px;
     border-radius: 5px;
     color: var(--text-color);
     border: 1px solid var(--decent-color);
 }
-.cart-item-price{
+
+.cart-item-price {
     color: var(--primary-color);
 }
-.sidebar--footer{
+
+.sidebar--footer {
     position: absolute;
-    bottom: -100%;
-    width: 88%
+    bottom: 10px;
+    width: 100%;
 }
-.total--amount{
+
+.total--amount {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 2px solid var(--decent-color);
-    border-radius:5%;
-    padding: 15px 120px;
+    border-radius: 5px;
+    padding: 30px;
 }
-.cart-total{
+
+.cart-total {
     font-size: 16px;
     color: var(--primary-color);
     font-weight: 500;
 }
-.checkout-btn{
-    width: 100%;
+
+.checkout-btn {
+    width: 88%;
     margin-top: 2rem;
-    background:var(--secondary-color) ;
+    background: var(--secondary-color);
     color: var(--accent-color);
     border-radius: 50px;
     cursor: pointer;
-    padding: 10px 130px;
+    padding: 10px;
+    border: none;
 }
+
+.Test {
+    position: fixed;
+}
+/* Basic styling for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
